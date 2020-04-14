@@ -16,85 +16,11 @@ class _bottomsheetState extends State<bottomsheet> {
     return Stack(
       children: <Widget>[
         DraggableScrollableSheet(
-        maxChildSize: 1.0,
-        minChildSize: 0.4,
-        initialChildSize: 0.5,
-        builder: (context, scrollableController)
-        {
-          return SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            controller: scrollableController,
-            child: Container(
-                height: height,
-                decoration: BoxDecoration(
-                  borderRadius: bottomsheetRadius,
-                  color: Colors.blueGrey.shade50,
-                ),
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Text("About",style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                              fontSize: 30.0
-                          )),
-                          Icon(Icons.more_vert,color: Colors.black,),
-                        ],
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        Container(
-                          height: 60.0,
-                          width: 60.0,
-                          child: RaisedButton(
-                            color: Colors.blue.shade200,
-                            onPressed: () {},
-                            shape: RoundedRectangleBorder(
-                                borderRadius: radius
-                            ),
-                          ),
-                        ),
-                        Container(
-                          height: 60.0,
-                          width: 60.0,
-                          child: RaisedButton(
-                            color: Colors.indigo,
-                            onPressed: () {},
-                            shape: RoundedRectangleBorder(
-                                borderRadius: radius
-                            ),
-                          ),
-                        ),
-                        Container(
-                          height: 60.0,
-                          width: 60.0,
-                          child: RaisedButton(
-                            color: Colors.grey.shade200,
-                            onPressed: () {},
-                            shape: RoundedRectangleBorder(
-                                borderRadius: radius
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                )
-            ),
-          );
-        }
-    ),
-
-        DraggableScrollableSheet(
             maxChildSize: 1.0,
-            minChildSize: 0.2,
-            initialChildSize: 0.4,
-            builder: (context, scrollableController) {
+            minChildSize: 0.005,
+            initialChildSize: 0.05,
+            builder: (context, scrollableController)
+            {
               return SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 controller: scrollableController,
@@ -102,66 +28,140 @@ class _bottomsheetState extends State<bottomsheet> {
                     height: height,
                     decoration: BoxDecoration(
                       borderRadius: bottomsheetRadius,
-                      color: Colors.black
+                      color: Colors.blueGrey.shade50,
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(25.0),
-                      child: Column(
-                        children: <Widget>[
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Text("Feed",style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w900,
-                                fontSize: 30.0
-                            ),),
-                          ),
-                          sizedBox,
-                          Row(
+                    child: Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              CircleAvatar(
-                                backgroundImage: AssetImage("assets/download.jfif"),
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text("Noell Blue",style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20.0
-                                  ),),
-                                  Text("Yesterday at 8:14 PM",style: TextStyle(
-                                      color: Colors.grey
-                                  ),),
-                                ],
-                              ),
-                              Padding(padding: EdgeInsets.only(left: 80.0)),
-                              Icon(Icons.more_vert,color: Colors.white,),
+                              Text("About",style: TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 30.0
+                              )),
+                              Icon(Icons.more_vert,color: Colors.black,),
                             ],
                           ),
-                          sizedBox,
-                          Row(
-                            children: <Widget>[
-                              Text("Blue magic!",style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15.0
-                              ),),
-                              sizedboxWidth,
-                              Image.asset("assets/rhombus.png",color: Colors.blue,height: 15.0,width: 20.0,),
-                              sizedboxWidth,
-                              Image.asset("assets/rhombus.png",color: Colors.blue,height: 20.0,width: 25.0,),
-                              sizedboxWidth,
-                              Text("Model @dejyosha",style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15.0
-                              ),)
-                            ],
-                          ),
-                          sizedBox,
-                          Image.asset("assets/mario.jfif",fit: BoxFit.fitWidth,)
-                        ],
-                      ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Container(
+                              height: 60.0,
+                              width: 60.0,
+                              child: RaisedButton(
+                                color: Colors.blue.shade200,
+                                onPressed: () {},
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: radius
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: 60.0,
+                              width: 60.0,
+                              child: RaisedButton(
+                                color: Colors.indigo,
+                                onPressed: () {},
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: radius
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: 60.0,
+                              width: 60.0,
+                              child: RaisedButton(
+                                color: Colors.grey.shade200,
+                                onPressed: () {},
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: radius
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    )
+                ),
+              );
+            }
+        ),
+
+        DraggableScrollableSheet(
+            maxChildSize: 1.0,
+            minChildSize: 0.0005,
+            initialChildSize: 0.005,
+            builder: (context, scrollableController) {
+              return SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                controller: scrollableController,
+                child: Container(
+                  height: height,
+                  decoration: BoxDecoration(
+                      borderRadius: bottomsheetRadius,
+                      color: Colors.black
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(25.0),
+                    child: Column(
+                      children: <Widget>[
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text("Feed",style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w900,
+                              fontSize: 30.0
+                          ),),
+                        ),
+                        sizedBox,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            CircleAvatar(
+                              backgroundImage: AssetImage("assets/download.jfif"),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text("Noell Blue",style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20.0
+                                ),),
+                                Text("Yesterday at 8:14 PM",style: TextStyle(
+                                    color: Colors.grey
+                                ),),
+                              ],
+                            ),
+                            Padding(padding: EdgeInsets.only(left: 80.0)),
+                            Icon(Icons.more_vert,color: Colors.white,),
+                          ],
+                        ),
+                        sizedBox,
+                        Row(
+                          children: <Widget>[
+                            Text("Blue magic!",style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15.0
+                            ),),
+                            sizedboxWidth,
+                            Image.asset("assets/rhombus.png",color: Colors.blue,height: 15.0,width: 20.0,),
+                            sizedboxWidth,
+                            Image.asset("assets/rhombus.png",color: Colors.blue,height: 20.0,width: 25.0,),
+                            sizedboxWidth,
+                            Text("Model @dejyosha",style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15.0
+                            ),)
+                          ],
+                        ),
+                        sizedBox,
+                        Image.asset("assets/mario.jfif",fit: BoxFit.fitWidth,)
+                      ],
                     ),
+                  ),
                 ),
               );
             }
